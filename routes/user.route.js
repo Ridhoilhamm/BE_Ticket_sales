@@ -1,0 +1,15 @@
+const express = require (`express`)
+const app = express()
+
+app.use(express.json())
+const userController = require(`../controllers/user.controller`)
+app.get("/", userController.getAllUser)
+app.get("/:key", userController.findUser)
+app.post("/:id", userController.addUser)
+app.put("/:id",userController.updateUser)
+app.delete("/:id", userController.deleteUser)
+
+module.exports = app
+
+//digunakan untuk menjalankan project
+

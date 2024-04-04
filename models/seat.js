@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:false,
       autoIncrement:true,
       primaryKey:true,
-      typea:DataTypes.INTEGER
+      type:DataTypes.INTEGER
     },
     eventID: DataTypes.INTEGER,
     rowNum: DataTypes.STRING,
