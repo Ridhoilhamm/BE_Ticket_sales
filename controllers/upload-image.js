@@ -6,12 +6,11 @@ const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, `./image`); //mendefinisikan tempat untuk storagenya
   },
-  filename: (req, res, cb) => {
+  filename: (req, file, cb) => {
     cb(null, `cover-${Date.now()}${path.extname(file.originalname)}`);
   },
 });
-const upload = multer({
-  storage: storage,
+const upload = multer({storage: storage,
   //digunakan untuk memfilter file (upload)
   fileFilter: (req, file, cb) => {
     //filter type file
